@@ -11,5 +11,10 @@ pipeline {
         bat(encoding: 'utf-8', script: 'runmaven.bat')
       }
     }
+    stage('test') {
+      steps {
+        junit 'test.log'
+      }
+    }
   }
 }

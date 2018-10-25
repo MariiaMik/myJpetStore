@@ -22,7 +22,7 @@ pipeline {
 				repository: 'maven-snapshots',
 				credentialsId: 'nexus3',
 				artifacts: [
-					[artifactId: jpetstore,
+					[artifactId: 'jpetstore',
 					 classifier: '',
 					 file: 'target/jpetstore-' + version + '.war',
 					 type: 'war']

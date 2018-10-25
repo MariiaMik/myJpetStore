@@ -8,7 +8,7 @@ pipeline {
     }
     stage('maven') {
       steps {
-        bat(encoding: 'utf-8', script: 'runmaven')
+        bat(encoding: 'utf-8', script: 'runmaven.bat')
       }
     }
   }

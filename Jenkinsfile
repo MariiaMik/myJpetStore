@@ -16,7 +16,7 @@ pipeline {
         nexusArtifactUploader(nexusVersion: 'nexus3', protocol: 'http', nexusUrl: 'localhost:8081', groupId: 'jpetstore', version: '1.0', repository: 'maven-snapshots', credentialsId: 'nexus3', artifacts: [
                     					[artifactId: jpetstore,
                     					 classifier: '',
-                    					 file: 'target/jpetstore-' + version + '.war',
+                    					 file: 'target/jpetstore.war',
                     					 type: 'war']
                     				])
         }

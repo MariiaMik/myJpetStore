@@ -28,6 +28,7 @@ pipeline {
 					 type: 'war']
 				]
 			 )
-    }
-  }
+		}
+	}
+	}
 }

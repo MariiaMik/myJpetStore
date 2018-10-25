@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('git') {
       steps {
-        git(url: 'https://github.com/MariiaMik/myJpetStore.git', branch: 'master', credentialsId: '103c120d19c8848aaef2b73010e5c644bb0c7af3')
+        git(url: 'https://github.com/MariiaMik/myJpetStore.git', branch: 'master', credentialsId: 'github')
       }
     }
     stage('maven') {
@@ -14,11 +14,11 @@ pipeline {
     stage('nexus') {
       steps {
         nexusArtifactUploader(nexusVersion: 'nexus3', protocol: 'http', nexusUrl: 'localhost:8081/', groupId: 'jpetstore', version: '1.0-SNAPSHOT', repository: 'maven-snapshots', credentialsId: 'nexus3', artifacts: [
-                              					[artifactId: 'jpetstore',
-                              					 classifier: 'debug',
-                              					 file: 'target/jpetstore.war',
-                              					 type: 'war']
-                              				])
+                                        					[artifactId: 'jpetstore',
+                                        					 classifier: 'debug',
+                                        					 file: 'target/jpetstore.war',
+                                        					 type: 'war']
+                                        				])
         }
       }
     }

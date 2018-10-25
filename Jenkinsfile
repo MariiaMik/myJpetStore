@@ -13,12 +13,12 @@ pipeline {
     }
     stage('nexus') {
       steps {
-        nexusArtifactUploader(nexusVersion: 'nexus3', protocol: 'http', nexusUrl: 'localhost:8081/', groupId: 'jpetstore', version: '1.0', repository: 'maven-snapshots', credentialsId: 'nexus3', artifacts: [
-                    					[artifactId: 'jpetstore',
-                    					 classifier: 'debug',
-                    					 file: 'target/jpetstore.war',
-                    					 type: 'war']
-                    				])
+        nexusArtifactUploader(nexusVersion: 'nexus3', protocol: 'http', nexusUrl: 'localhost:8081/', groupId: 'jpetstore', version: '1.0-SNAPSHOT', repository: 'maven-snapshots', credentialsId: 'nexus3', artifacts: [
+                              					[artifactId: 'jpetstore',
+                              					 classifier: 'debug',
+                              					 file: 'target/jpetstore.war',
+                              					 type: 'war']
+                              				])
         }
       }
     }

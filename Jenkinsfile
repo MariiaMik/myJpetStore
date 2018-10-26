@@ -13,7 +13,9 @@ pipeline {
     }
     stage('sonar') {
       steps {
-        bat(encoding: 'utf-8', script: 'runsonar.bat')
+        withSonarQubeEnv('My SonarQube Server') {
+          bat(encoding: 'utf-8', script: 'runsonar.bat')
+        }
         waitForQualityGate()
       }
     }

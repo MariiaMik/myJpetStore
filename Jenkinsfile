@@ -13,7 +13,7 @@ pipeline {
     }
     stage('sonar') {
       steps {
-        bat(encoding: 'utf-8', script: 'runmaven.bat')
+        bat(encoding: 'utf-8', script: 'runsonar.bat')
       }
     }
     stage('nexus') {

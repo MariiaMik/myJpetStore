@@ -11,6 +11,11 @@ pipeline {
         bat(encoding: 'utf-8', script: 'runmaven.bat')
       }
     }
+    stage('sonar') {
+      steps {
+        bat(encoding: 'utf-8', script: 'runmaven.bat')
+      }
+    }
     stage('nexus') {
       steps {
         nexusArtifactUploader(nexusVersion: 'nexus3', protocol: 'http', nexusUrl: 'localhost:8081/', groupId: 'jpetstore', version: '1.0-SNAPSHOT', repository: 'maven-snapshots', credentialsId: 'nexus3', artifacts: [
